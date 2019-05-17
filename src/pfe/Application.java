@@ -12,25 +12,32 @@ import javax.swing.JFileChooser;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
 import org.jdom2.input.SAXBuilder;
-
+/**
+ *
+ * @author mohinfo & salahinfo
+ */
 
 public class Application extends javax.swing.JFrame  {
     
     private  static int fca=1,fsa=1,gc=1,gs=1,rg=1,taille=30;
-    public static int esg=0,stg=0,estg=0,i=0,sng=0,sntg=0,srule=0,snrule=0,sntype=0,sizenRHS[]=new int[taille],sizenLHS[]=new int[taille]
-            ,siezeeNAC[]=new int[taille],siezeePAC[]=new int[taille],siezeeGAC[]=new int[taille],siezeeRHS[]=new int[taille],siezeeLHS[]=new int[taille],strule[]=new int[taille] ,sizenPAC[]=new int[taille],sizenNAC[]=new int[taille],sizenGAC[]=new int[taille];
+    public static int esg=0,stg=0,estg=0,i=0,sng=0,sntg=0,srule=0,snrule=0,sntype=0,sizenRHS[]=new int[taille],
+	     sizenLHS[]=new int[taille],siezeeNAC[]=new int[taille],siezeePAC[]=new int[taille],siezeeGAC[]=new int[taille],
+	     siezeeRHS[]=new int[taille],siezeeLHS[]=new int[taille],strule[]=new int[taille] ,sizenPAC[]=new int[taille],
+	     sizenNAC[]=new int[taille],sizenGAC[]=new int[taille];
     public static boolean apllc=false,Nac[]=new boolean[taille],Pac[]=new boolean[taille],Gac[]=new boolean[taille] ;
     public  static String  namegraphe,aboxrule="",nametypegraphe,nodegr[]=new String[taille],
                            edge[]=new String[taille],edgeTG[]=new String[taille],
-                           typerule[][]=new String[taille][taille],norul[][]=new String[taille][taille],narule[]=new String[taille],
-                           nnodeTG[]=new String[taille],cnodeTG[]=new String[taille],fnodeTG[]=new String[taille],
+                           typerule[][]=new String[taille][taille],norul[][]=new String[taille][taille],
+	                   narule[]=new String[taille],nnodeTG[]=new String[taille],cnodeTG[]=new String[taille],
+	                   fnodeTG[]=new String[taille],
                            nnode[]=new String[taille],cnode[]=new String[taille],fnode[]=new String[taille],
                            tnnode[]=new String[taille],tcnode[]=new String[taille],tfnode[]=new String[taille],
                            edgeLHS[][]=new String[taille][taille],edgeRHS[][]=new String[taille][taille],
                            NLHS[][]=new String[taille][taille],NRHS[][]=new String[taille][taille],
-                           edgeNAC[][]=new String[taille][taille],edgePAC[][]=new String[taille][taille],edgeGAC[][]=new String[taille][taille],
-                           NNAC[][]=new String[taille][taille],NPAC[][]=new String[taille][taille],NGAC[][]=new String[taille][taille]
-            ;
+                           edgeNAC[][]=new String[taille][taille],edgePAC[][]=new String[taille][taille],
+	                   edgeGAC[][]=new String[taille][taille],
+                           NNAC[][]=new String[taille][taille],NPAC[][]=new String[taille][taille],
+	                   NGAC[][]=new String[taille][taille];
     
     public  JFileChooser ch=new JFileChooser(); File f,fc;
     
