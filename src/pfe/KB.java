@@ -24,8 +24,8 @@ public class KB extends Application{
 public void KB_TBOX(){
     tbox="";          
           
-          tbox="     ----- voici la base de connaissance de notre system -----\n\n"+
-                  "       TBOX = { \n\tGTS \u2291 \u22A4 ,\n"
+          tbox="     ----- voici la base de connaissance de notre système -----\n\n"+
+                  "TBOX = { \n\tGTS \u2291 \u22A4 ,\n"
                   
                   
                   
