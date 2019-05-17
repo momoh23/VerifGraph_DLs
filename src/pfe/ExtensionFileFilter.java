@@ -7,7 +7,7 @@ package pfe;
 
 /**
  *
- * @author salahinfo
+ * @author mohinfo & salahinfo
  */
 public class ExtensionFileFilter {
     
