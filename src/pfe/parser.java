@@ -69,16 +69,19 @@ system+=("\n     *******GraphTransformationSystem*******\n\n");
             
 system+=("\n      *******The static part of System*******");
 	   
-            for (int i = 0; i < TagguedValue.size(); i++){
-	                	                           Element Tagge = (Element)TagguedValue.get(i);
-	                                                   system+=("\nle module de commandes qui gère les librairies and their conditions est:"+Tagge.getAttributeValue("Tag"));
-                                                           system+=("\nce module est il applicable ou bien le type d'expression java:"+Tagge.getAttributeValue("TagValue"));
-                                                         }
+            for (int i = 0; i < TagguedValue.size(); i++)
+	        {
+	        Element Tagge = (Element)TagguedValue.get(i);
+	        system+=("\nle module de commandes qui gère les librairies and their conditions est:"+Tagge.getAttributeValue("Tag"));
+                system+=("\nce module est il applicable ou bien le type d'expression java:"+Tagge.getAttributeValue("TagValue"));
+                 }
             
-            for (int j = 0; j < TagguedValue1.size(); j++){
-	         	                                    Element Tagge1 = (Element)TagguedValue1.get(j);
-                                                            system+=("\nle module de commandes qui gère les librairies and their conditions est:"+Tagge1.getAttributeValue("Tag"));
-                                                            system+=("\nle nom des "+Tagge1.getAttributeValue("Tag")+" = "+Tagge1.getAttributeValue("TagValue"));
+            for (int j = 0; j < TagguedValue1.size(); j++)
+	        {
+	          Element Tagge1 = (Element)TagguedValue1.get(j);
+                  system+=("\nle module de commandes qui gère les librairies and their conditions est:"
+			  +Tagge1.getAttributeValue("Tag"));
+                  system+=("\nle nom des "+Tagge1.getAttributeValue("Tag")+" = "+Tagge1.getAttributeValue("TagValue"));
                                                            }
             
 system+=("\n      *******The type of node,edge and Graph in GTS******* \n");
@@ -164,19 +167,19 @@ system+=("\n      *******The type of node,edge and Graph in GTS******* \n");
                                       if(g.getAttributeValue("ID").equalsIgnoreCase(Edgetgra.getAttributeValue("source"))) nns=g;
                                       if(g.getAttributeValue("ID").equalsIgnoreCase(Edgetgra.getAttributeValue("target"))) nnt=g;
                                       }
-                       for (int l = 0;l <NodeType.size() ; l++){
-                                                                Element Node = (Element) NodeType.get(l); 
+                    for (int l = 0;l <NodeType.size() ; l++){
+                                       Element Node = (Element) NodeType.get(l); 
                                        if(nns.getAttributeValue("type").equalsIgnoreCase(Node.getAttributeValue("ID")))
-                                                                  {                    
-                                                                  ind=Node.getAttributeValue("name").indexOf("%");
-                                                                  source=n.getnamenode(Node.getAttributeValue("name").substring(0,ind));
-                                                                  }
+                                         {                    
+                                          ind=Node.getAttributeValue("name").indexOf("%");
+                                          source=n.getnamenode(Node.getAttributeValue("name").substring(0,ind));
+                                          }
                                         if(nnt.getAttributeValue("type").equalsIgnoreCase(Node.getAttributeValue("ID")))
-                                                                  {                    
-                                                                  ind=Node.getAttributeValue("name").indexOf("%");
-                                                                  target=n.getnamenode(Node.getAttributeValue("name").substring(0,ind));
-                                                                  }
-                                                               }
+                                           {                    
+                                            ind=Node.getAttributeValue("name").indexOf("%");
+                                            target=n.getnamenode(Node.getAttributeValue("name").substring(0,ind));
+                                           }
+                                         }
                                            edgeTG[i]=n.edge(source,target,edgeforme);
                     
                 }}}}
@@ -376,63 +379,63 @@ regle+=("\nsource edge= :" + edgrule.getAttributeValue("source")+"---->Tragetedg
                               if(edgrule.getAttributeValue("type").equalsIgnoreCase(edgee.getAttributeValue("ID")))
                                  {
                                    regle+=("\nTYPe Edge :" + edgee.getAttributeValue("name"));
-	                                                                          ind=edgee.getAttributeValue("name").indexOf("%");
-                                                                                  indf=edgee.getAttributeValue("name").indexOf("java");
-                                                                                 edgeforme=n.getformeedge(edgee.getAttributeValue("name").substring(ind+1,indf));
+	                            ind=edgee.getAttributeValue("name").indexOf("%");
+                                    indf=edgee.getAttributeValue("name").indexOf("java");
+                                    edgeforme=n.getformeedge(edgee.getAttributeValue("name").substring(ind+1,indf));
                                  
-                                            for(int u = 0; u < Nodepartrulle.size();u++){
-                                                                                         Element g=(Element) Nodepartrulle.get(u);
-                                                                                         if(edgrule.getAttributeValue("source").equalsIgnoreCase(g.getAttributeValue("ID"))) nns=g;
-                                                                                         if(g.getAttributeValue("ID").equalsIgnoreCase(edgrule.getAttributeValue("target"))) nnt=g;
-                                                                                         }
-                                            for (int p = 0;p <NodeType.size() ; p++){
-                                                                                      Element Node = (Element) NodeType.get(p);
-                                                                                      if(nns.getAttributeValue("type").endsWith(Node.getAttributeValue("ID")))
-                                                                                        {                    
-                                                                                         ind=Node.getAttributeValue("name").indexOf("%");
-                                                                                         source=n.getnamenode(Node.getAttributeValue("name").substring(0,ind));
-                                                                                         }
-                                                                                      if(nnt.getAttributeValue("type").equalsIgnoreCase(Node.getAttributeValue("ID")))
-                                                                                        {                    
-                                                                                          ind=Node.getAttributeValue("name").indexOf("%");
-                                                                                          target=n.getnamenode(Node.getAttributeValue("name").substring(0,ind));
-                                                                                         }
-                                                                                    }//fin definir le nom du node source et cible de chaque edge
+                                    for(int u = 0; u < Nodepartrulle.size();u++)
+			               {
+                                             Element g=(Element) Nodepartrulle.get(u);
+                                       if(edgrule.getAttributeValue("source").equalsIgnoreCase(g.getAttributeValue("ID"))) nns=g;
+                                       if(g.getAttributeValue("ID").equalsIgnoreCase(edgrule.getAttributeValue("target"))) nnt=g;
+                                       }
+                                     for (int p = 0;p <NodeType.size() ; p++)
+				         {
+                                          Element Node = (Element) NodeType.get(p);
+                                          if(nns.getAttributeValue("type").endsWith(Node.getAttributeValue("ID")))
+                                         {                    
+                                           ind=Node.getAttributeValue("name").indexOf("%");
+                                           source=n.getnamenode(Node.getAttributeValue("name").substring(0,ind));
+                                          }
+                                          if(nnt.getAttributeValue("type").equalsIgnoreCase(Node.getAttributeValue("ID")))
+                                            {                    
+                                            ind=Node.getAttributeValue("name").indexOf("%");
+                                            target=n.getnamenode(Node.getAttributeValue("name").substring(0,ind));
+                                             }
+                                                                                    }
                                                                                   edgeRHS[i][k]=n.edge(source, target,edgeforme);
-                                                                                 }//fin definir le type et les node de edge 
-                                                                               }//fin de definir le edge son propre nom
-                                                                            }//fin de definir les edge de partie RHS
-                                            
+			      }   }                                            }
                                        
                                                                                
 
-                     }//fin switch
-                                                                 }//fin definir les partie de  rule
+                     } //fin switch
+                                                                 }//fin de definition de LHS & RHS
                                                
-                                               apllc=Rule.cloneContent().toString().contains(re);
-                                               
-                                               Nac[i]=Gac[i]=Pac[i]=false;
-if(Rule.cloneContent().toString().contains(re)){
-
-
-regle+="\n on a dans la partier Applicationcondition";
-if(Rule.getChild("ApplCondition").cloneContent().toString().contains("[Element: <NAC/>]")){
-   
-List NodeNac=Rule.getChild("ApplCondition").getChild("NAC").getChild("Graph").getChildren("Node");
-List EdgeNac=Rule.getChild("ApplCondition").getChild("NAC").getChild("Graph").getChildren("Edge");
+              apllc=Rule.cloneContent().toString().contains(re);
+              Nac[i]=Gac[i]=Pac[i]=false;
+          if(Rule.cloneContent().toString().contains(re))
+	    {
+             regle+="\n on a dans la partier Applicationcondition";
+	  if(Rule.getChild("ApplCondition").cloneContent().toString().contains("[Element: <NAC/>]"))
+	    {
+             List NodeNac=Rule.getChild("ApplCondition").getChild("NAC").getChild("Graph").getChildren("Node");
+	     List EdgeNac=Rule.getChild("ApplCondition").getChild("NAC").getChild("Graph").getChildren("Edge");
     
     
     Nac[i]=true;
    
-                             ////////////////////////////////////////////////:Nac
+                             ////////////////////////////////////////////////: la règle NAC
+		  
     regle+=("\n\t\t on a dans l'Applcond ::::NAC");
     regle+=("\nID ApplCond ="  +Rule.getChild("ApplCondition").getChild("NAC").getChild("Graph").getAttributeValue("ID"));
     regle+=("\nle type de cette ApplCond est :" +Rule.getChild("ApplCondition").getChild("NAC").getChild("Graph").getAttributeValue("kind"));
     regle+=("\nname de cette ApplCond est  :" +Rule.getChild("ApplCondition").getChild("NAC").getChild("Graph").getAttributeValue("name"));
     regle+=("\n \t\tvoici les nodes de l'Applcond "+ "::NAC"+" de la regle "+rule.getAttributeValue("name")+"\n");
-                         ////////////////////////////////////////////////:node Nac            
-     sizenNAC[i]=NodeNac.size();
-                         for (int j = 0; j < NodeNac.size(); j++){
+		  
+                         ////////////////////////////////////////////////: noeuds Nac            
+    sizenNAC[i]=NodeNac.size();
+     for (int j = 0; j < NodeNac.size(); j++)
+         {
 	    	                                                        Element node = (Element) NodeNac.get(j);
 	    	                                                        regle+=("\nID node ="  + node.getAttributeValue("ID"));
                    	  	 for (h = 0;h <NodeType.size() ; h++){
@@ -511,19 +514,21 @@ List EdgePac=Rule.getChild("ApplCondition").getChild("PAC").getChild("Graph").ge
     //////////////////////////////////////:: Noeuds de la règle PAC     
     
     sizenPAC[i]=NodePac.size();
-                         for (int j = 0; j < NodePac.size(); j++){
-	    	                                                        Element nodee = (Element) NodePac.get(j);
-	    	                                                        regle+=("\nID node ="  + nodee.getAttributeValue("ID"));
-                   	  	 for (h = 0;h <NodeType.size() ; h++){
-                                                                       Element Node = (Element) NodeType.get(h);
-                                                                       if(nodee.getAttributeValue("type").equalsIgnoreCase(Node.getAttributeValue("ID")))
-                                                                        {   
-                                                                            regle+=("\nTYP node  :" + Node.getAttributeValue("name"));
-                                                                            ind=Node.getAttributeValue("name").indexOf("%"); 
-                                                                            NPAC[i][j]=n.getnamenode(Node.getAttributeValue("name").substring(0,ind));
-                                                                         }
-                                                                      } 
-                                                                        }
+                         for (int j = 0; j < NodePac.size(); j++)
+			    {
+	    	              Element nodee = (Element) NodePac.get(j);
+	    	              regle+=("\nID node ="  + nodee.getAttributeValue("ID"));
+                   	      for (h = 0;h <NodeType.size() ; h++)
+			          {
+                                   Element Node = (Element) NodeType.get(h);
+                                   if(nodee.getAttributeValue("type").equalsIgnoreCase(Node.getAttributeValue("ID")))
+                                     {   
+                                      regle+=("\nTYP node  :" + Node.getAttributeValue("name"));
+                                      ind=Node.getAttributeValue("name").indexOf("%"); 
+                                      NPAC[i][j]=n.getnamenode(Node.getAttributeValue("name").substring(0,ind));
+                                      }
+                                    } 
+                              }
     
 
                          
@@ -533,7 +538,8 @@ List EdgePac=Rule.getChild("ApplCondition").getChild("PAC").getChild("Graph").ge
                    for (int k=0;k < EdgePac.size();k++){
 	    	                                 Element edg = (Element) EdgePac.get(k);
 	    	                                 regle+=("\nID edge ="  + edg.getAttributeValue("ID"));
-	    	                                 regle+=("\nsource edge= :" + edg.getAttributeValue("source")+"---->Tragetedge=  :" + edg.getAttributeValue("target")+"\n");
+	    	                                 regle+=("\nsource edge= :" + edg.getAttributeValue("source")+"---->Tragetedge=  
+							 :" + edg.getAttributeValue("target")+"\n");
                    for (int j = 0;j <EdgeType.size() ;j++){
                                                   Element edgee = (Element) EdgeType.get(j);
                        if(edg.getAttributeValue("type").equalsIgnoreCase(edgee.getAttributeValue("ID")))
@@ -548,33 +554,25 @@ List EdgePac=Rule.getChild("ApplCondition").getChild("PAC").getChild("Graph").ge
                                        if(edg.getAttributeValue("source").equalsIgnoreCase(g.getAttributeValue("ID"))) nns=g;
                                        if(g.getAttributeValue("ID").equalsIgnoreCase(edg.getAttributeValue("target"))) nnt=g;
                                                                                          }
-                                            for (int p = 0;p <NodeType.size() ; p++){
-                                                                                      Element Node = (Element) NodeType.get(p);
-                                                                                      if(nns.getAttributeValue("type").equalsIgnoreCase(Node.getAttributeValue("ID")))
-                                                                                        {                    
-                                                                                         ind=Node.getAttributeValue("name").indexOf("%");
-                                                                                         source=n.getnamenode(Node.getAttributeValue("name").substring(0,ind));
-                                                                                         }
-                                                                                      if(nnt.getAttributeValue("type").equalsIgnoreCase(Node.getAttributeValue("ID")))
-                                                                                        {                    
-                                                                                          ind=Node.getAttributeValue("name").indexOf("%");
-                                                                                          target=n.getnamenode(Node.getAttributeValue("name").substring(0,ind));
-                                                                                         }
-                                                                                    }//fin definir le nom du node source et cible de chaque edge
+                                            for (int p = 0;p <NodeType.size() ; p++)
+					        {  // nom du noeud source et cible de chaque arc
+                                                  Element Node = (Element) NodeType.get(p);
+                                                  if(nns.getAttributeValue("type").equalsIgnoreCase(Node.getAttributeValue("ID")))
+                                                    {                    
+                                                     ind=Node.getAttributeValue("name").indexOf("%");
+                                                     source=n.getnamenode(Node.getAttributeValue("name").substring(0,ind));
+                                                    }
+                                                  if(nnt.getAttributeValue("type").equalsIgnoreCase(Node.getAttributeValue("ID")))
+                                                    {                    
+                                                     ind=Node.getAttributeValue("name").indexOf("%");
+                                                     target=n.getnamenode(Node.getAttributeValue("name").substring(0,ind));
+                                                    }
+                                                 }
                                                                                   edgePAC[i][k]=n.edge(source, target,edgeforme);
-                                                                                 }//fin definir le type et les node de edge 
-                                                                               }//fin de definir le edge son propre nom
-                                                                            }
-                         
-                         
-
-
-
-
-                                                                                          }
-
-
-
+                                             }
+		   			}
+				        }    }
+							 
 if(Rule.getChild("ApplCondition").cloneContent().toString().contains("[Element: <NestedAC/>]")){
   
 List NodeGac=Rule.getChild("ApplCondition").getChild("NestedAC").getChild("Graph").getChildren("Node");
@@ -590,33 +588,36 @@ regle+=("\n\t\t on a dans l'Applcond ::::NAC");
 	   getAttributeValue("name"));
     regle+=("\n \t\tvoici les nodes de l'Applcond "+ "::GAC"+" de la regle "+rule.getAttributeValue("name")+"\n");
     
-    //////////////////////////////////////////////////////Node Gac
+    //////////////////////////////////////////////////////noeud Gac
     
     sizenGAC[i]=NodeGac.size();
-                         for (int j = 0; j < NodeGac.size(); j++){
-	    	                                                        Element nod = (Element) NodeGac.get(j);
-	    	                                                        regle+=("\nID node ="  + nod.getAttributeValue("ID"));
-                   	  	 for (h = 0;h <NodeType.size() ; h++){
-                                                                       Element Node = (Element) NodeType.get(h);
-                                                                       if(nod.getAttributeValue("type").equalsIgnoreCase(Node.getAttributeValue("ID")))
-                                                                        {   
-                                                                            regle+=("\nTYP node  :" + Node.getAttributeValue("name"));
-                                                                            ind=Node.getAttributeValue("name").indexOf("%"); 
-                                                                            NGAC[i][j]=n.getnamenode(Node.getAttributeValue("name").substring(0,ind));
-                                                                         }
-                                                                      } 
-                                                                        }
+                         for (int j = 0; j < NodeGac.size(); j++)
+			    {
+	    	              Element nod = (Element) NodeGac.get(j);
+	    	              regle+=("\nID node ="  + nod.getAttributeValue("ID"));
+                   	      for (h = 0;h <NodeType.size() ; h++)
+			          {
+                                   Element Node = (Element) NodeType.get(h);
+                                   if(nod.getAttributeValue("type").equalsIgnoreCase(Node.getAttributeValue("ID")))
+                                      {   
+                                       regle+=("\nTYP node  :" + Node.getAttributeValue("name"));
+                                       ind=Node.getAttributeValue("name").indexOf("%"); 
+                                       NGAC[i][j]=n.getnamenode(Node.getAttributeValue("name").substring(0,ind));
+                                       }
+                                    } 
+                               }
     
                          
-//////////////////////////////////////////////////////edge Gac
+//////////////////////////////////////////////////////arc GAC
                          
-                         regle+=("\n voici les arcs de la conditon :: GAC \n");
+        regle+=("\n voici les arcs de la conditon :: GAC \n");
         siezeeGAC[i]= EdgeGac.size();       
-                              for (int k=0;k < EdgeGac.size();k++){
-	    	                             Element edg = (Element) EdgeGac.get(k);
-	    	                             regle+=("\nID edge ="  + edg.getAttributeValue("ID"));
-	    	                             regle+=("\nsource edge= :" + edg.getAttributeValue("source")+"---->Tragetedge=  :" 
-						    + edg.getAttributeValue("target")+"\n");
+                              for (int k=0;k < EdgeGac.size();k++)
+			          {
+	    	                    Element edg = (Element) EdgeGac.get(k);
+	    	                    regle+=("\nID edge ="  + edg.getAttributeValue("ID"));
+	    	                    regle+=("\nsource edge= :" + edg.getAttributeValue("source")+"---->Tragetedge=  :" 
+				           + edg.getAttributeValue("target")+"\n");
 				      
                                for (int j = 0;j <EdgeType.size() ;j++){
                                               Element edgee = (Element) EdgeType.get(j);
